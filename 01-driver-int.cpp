@@ -30,7 +30,7 @@ int main(){
     for ( int i = 1 ; i <= SIZE ; ++i )
         v1.push_back(i);
 
-    cout << "\nStatement:\tvector<int> v2(v1);\n";
+    /*cout << "\nStatement:\tvector<int> v2(v1);\n";
     vector<int> v2(v1);
 
     cout << "\nStatement:\tvector<int> v3 = v1;\n";
@@ -100,6 +100,6 @@ int main(){
     cout << '\n';
     cout << "\t2 * v3 == 3 * v2 is " << ( 2 * v3 == 3 * v2 ) << '\n';
 
-    cout << "\nStatement:\treturn 0;\n";
+    cout << "\nStatement:\treturn 0;\n";*/
     return 0;
 }
