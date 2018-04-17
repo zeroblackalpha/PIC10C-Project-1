@@ -30,7 +30,7 @@ int main(){
     for ( int i = 1 ; i <= SIZE ; ++i )
         v1.push_back(i);
 
-    /*cout << "\nStatement:\tvector<int> v2(v1);\n";
+    cout << "\nStatement:\tvector<int> v2(v1);\n";
     vector<int> v2(v1);
 
     cout << "\nStatement:\tvector<int> v3 = v1;\n";
@@ -49,7 +49,7 @@ int main(){
     cout << "\nStatement:\tv3 = v2 = v1;\n";
     v3 = v2 = v1; 
 
-    cout << "\nStatement:\tv1 = ( 2 * v2 ) * 3;\n";
+    /*cout << "\nStatement:\tv1 = ( 2 * v2 ) * 3;\n";
     v1 = ( 2 * v2 ) * 3;
 
     cout << "\nAction(s):\tv1, v2, and v3 are displayed\n";
@@ -67,7 +67,7 @@ int main(){
     cout << "\tv1 = " << v1 << '\n';
     cout << "\tv2 = " << v2 << '\n';
     cout << "\tv3 = " << v3 << '\n';
-
+*/
     cout << "\nAction(s):\tEntries 2--"<< SIZE 
          <<" in v1, v2, and v3 replaced by 0\n";
     for ( int i = 2 ; i < v1.size() ; ++i )
@@ -78,15 +78,15 @@ int main(){
     cout << "\tv2 = " << v2 << '\n';
     cout << "\tv3 = " << v3 << '\n';
 
-    cout << "\nAction(s):\tThe dot product of v2 and v3 is displayed\n";
+    /*cout << "\nAction(s):\tThe dot product of v2 and v3 is displayed\n";
     cout << "\tv2 * v3 = " << v2 * v3 << '\n';
 
     cout << "\nAction(s):\tThe norms of v1, v2, and v3 are displayed\n";
     cout << "\t|| v1 || = " << sqrt(v1*v1) << '\n';
     cout << "\t|| v2 || = " << sqrt(v2*v2) << '\n';
-    cout << "\t|| v3 || = " << sqrt(v3*v3) << '\n';
+    cout << "\t|| v3 || = " << sqrt(v3*v3) << '\n';*/
 
-    cout << "\nAction(s):\tBoolean comparisons involving v1, v2, and v3\n";
+    /*cout << "\nAction(s):\tBoolean comparisons involving v1, v2, and v3\n";
     cout << std::boolalpha
          << "\tv1 <  v2 is " << ( v1 <  v2 ) << " because || v1 || >  || v2 ||\n"
          << "\tv2 <= v1 is " << ( v2 <= v1 ) << "  because || v2 || <= || v1 ||\n"
@@ -98,8 +98,9 @@ int main(){
 
     cout << "\tv1 == 3 * v2 is " << ( v1 == 3 * v2 ) << '\n';
     cout << '\n';
-    cout << "\t2 * v3 == 3 * v2 is " << ( 2 * v3 == 3 * v2 ) << '\n';
+    cout << "\t2 * v3 == 3 * v2 is " << ( 2 * v3 == 3 * v2 ) << '\n';*/
 
-    cout << "\nStatement:\treturn 0;\n";*/
+    cout << "\nStatement:\treturn 0;\n";
+    system("pause");
     return 0;
 }

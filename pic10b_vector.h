@@ -133,14 +133,15 @@ namespace Pic10b{
 
 
 /** ************************ OTHER FUNCTIONS ************************ **/
-std::ostream& operator<<( std::ostream& out, const Pic10b::vector& v ){
+template <class T>
+std::ostream& operator<<( std::ostream& out, const Pic10b::vector<T>& v ){
     for ( size_t i = 0 ; i < v.size() ; ++i )
         out << v[i] << ' ';
     return out;
 }
 
-
-void print_vector( const Pic10b::vector& v ){
+template <class T>
+void print_vector( const Pic10b::vector<T>& v ){
     if ( v.empty() )
         std::cout << "Vector is empty\n";
     else
