@@ -1,0 +1,37 @@
+Statement:	vector<string> v1;
+xxxxxxxxxx Default constructor called
+
+Action(s):	v1 is populated with 6 std::string values
+
+Statement:	vector<string> v2(v1);
+xxxxxxxxxx Copy constructor called
+
+Action(s):	3rd entry of v1 is modified (ilaltiC)
+		one more std::string value is pushed back (airolG)
+		v1 is displayed
+	v1 = [ Abigail, Beatriz, ilaltiC, Daneli, Elisa, Frida, airolG ]
+
+Action(s):	v2 is displayed
+	v2 = [ Abigail, Beatriz, Citlali, Daneli, Elisa, Frida ]
+
+Statement:	v2 = v1;
+xxxxxxxxxx Assignment operator called
+
+Statement:	v1 = ( Name: * v2 ) * Salazar;
+xxxxxxxxxx Copy constructor called
+xxxxxxxxxx Copy constructor called
+xxxxxxxxxx Assignment operator called
+xxxxxxxxxx Destructor called
+xxxxxxxxxx Destructor called
+
+Action(s):	v1 and v2 are displayed
+	v1 = [ Name: Abigail Salazar, Name: Beatriz Salazar, Name: ilaltiC Salazar, Name: Daneli Salazar, Name: Elisa Salazar, Name: Frida Salazar, Name: airolG Salazar ]
+	v2 = [ Abigail, Beatriz, ilaltiC, Daneli, Elisa, Frida, airolG ]
+
+Action(s):	Boolean comparisons '==' and '!='
+	v1 == v2 is false
+	v2 != v1 is true
+
+Statement:	return 0;
+xxxxxxxxxx Destructor called
+xxxxxxxxxx Destructor called

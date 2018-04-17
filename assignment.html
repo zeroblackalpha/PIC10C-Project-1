@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../style.css" type="text/css" />
+</head>
+<body>
+<h1 id="git-going-with-version-control"><code>git</code> going with version control</h1>
+<h2 id="goal">Goal:</h2>
+<p>To familiarize yourself with version control software.</p>
+<h2 id="directions">Directions:</h2>
+<p>Choose between assignment A (hard), or assignment B (easy), below. Then proceed to work on your project, making sure you keep track of your changes using <code>git</code>. Make sure your code is available for the public (<em>e.g.,</em> the grader, your TA, or myself) to download by the time this quarter is over: for instance, you can host your code on <em>bitbucket</em>, <em>github</em>, <em>gitlab</em>, or even the <em>laguna</em> (pic) server (we can help you get set).</p>
+<blockquote>
+<p><strong>Important:</strong> Whether or not your project &quot;works as expected&quot; is irrelevant for this assignment. You will be graded solely on your [proper, or improper] use of git. If you so choose, you can work on a completely different project (say a website, or a python program), and/or use a completely different version control software (just as long as you notify us in advance if you intend to follow this approach.</p>
+</blockquote>
+<h3 id="assignment-a">Assignment A</h3>
+<p>Your very own <code>vector&lt;ItemType&gt;</code> class.</p>
+<ul>
+<li><a href="https://bitbucket.org/rikis-salazar/10b-hw-pic10b-vector">Click here for the assignment description</a>.</li>
+<li><a href="https://bitbucket.org/rikis-salazar/10b-hw-pic10b-vector/downloads/">Click here to download a zip file</a> with &quot;a copy&quot; of the assignment description, as well as other companion files.</li>
+</ul>
+<h3 id="assignment-b">Assignment B</h3>
+<p>Your job is to write a single-player version of the card game known as <em>'siete y medio'</em> (seven and a half), which is very similar in nature to the casino game of Blackjack (also known as 21). The goal of the game is to get cards whose total value comes the closest to 7½ without going over it. Getting a card total over 7½ is called &quot;busting&quot;.</p>
+<p>When a player makes a bet against the dealer. There are 4 possible outcomes:</p>
+<ul>
+<li>The player comes closer to 7½ than the dealer or the dealer busts but the player did not bust. In this case the player wins the round and the player's money increases by the amount that was bet.</li>
+<li>The dealer comes closer to 7½ than the player, or the player busts. In this case the player loses the round and the player's money decreases by the amount that was bet.</li>
+<li>Both, the player and dealer bust. In this case the player loses the round and the player's money decreases by the amount that was bet. This is called <em>house advantage</em>.</li>
+<li>Both the player and the dealer have the same total and they do not bust. In this case a tie is declared and no money is exchanged.</li>
+</ul>
+<h4 id="the-mechanics-of-the-game">The mechanics of the game</h4>
+<p>The game is played with a <em>'Spanish baraja'.</em></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><img src="naipes.png" alt="naipes.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Figure 1: <em>Baraja española</em></td>
+</tr>
+</tbody>
+</table>
+<p>From the <a href="http://en.wikipedia.org/wiki/Spanish_playing_cards">Spanish playing cards</a> entry of wikipedia:</p>
+<blockquote>
+<p>&quot;The traditional Spanish baraja is an old deck that was brought over by the Moors to Spain during the 14th century. The cards are still called naipes after the nā'ib cards found in the Mamluk deck...</p>
+<p>Smaller decks have 40 cards and lack ranks 8, 9 and comodines (jokers). The four suits are <strong>bastos</strong> (<em>clubs</em>), <strong>oros</strong> (literally &quot;<em>golds</em>&quot;, that is, <em>golden coins</em>), <strong>copas</strong> (<em>cups</em>), and <strong>espadas</strong> (<em>swords</em>). The four suits are thought to represent the four social classes of the Middle Ages. The suit of coins represents the merchants, the clubs represents the peasants, the cups represent the church and the swords represent the military.</p>
+<p>The three face cards of each suit have pictures similar to the <em>jack</em>, <em>queen</em>, and <em>king</em> in the French deck, and rank identically. They are the <strong>sota</strong>, which is similar to the <em>jack/knave</em> and generally depicts a <em>page</em> or <em>squire</em>, the <strong>caballo</strong> (<em>knight</em>, literally &quot;<em>horse</em>&quot;), and the <strong>rey</strong> (<em>king</em>) respectively.&quot;</p>
+</blockquote>
+<p>At each round of play the player places a bet. After that, the player and the dealer each draw one card from the deck.The player is then repeatedly asked if another card is wanted. The player can continue to draw cards while the total is less than 7½. After the player's turn is over, the dealer's cards are shown. The dealer's play is always the same: the dealer continues to draw cards only if the total is less than 5½. The value of every card doesn't always agree with the rank of the card. The values are listed in the following table:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Name:</strong></th>
+<th align="center">As</th>
+<th align="center">Dos</th>
+<th align="center">Tres</th>
+<th align="center">Cuatro</th>
+<th align="center">Cinco</th>
+<th align="center">Seis</th>
+<th align="center">Siete</th>
+<th align="center">Sota</th>
+<th align="center">Caballo</th>
+<th align="center">Rey</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Rank:</strong></td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">5</td>
+<td align="center">6</td>
+<td align="center">7</td>
+<td align="center">10</td>
+<td align="center">11</td>
+<td align="center">12</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Values:</strong></td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">5</td>
+<td align="center">6</td>
+<td align="center">7</td>
+<td align="center">½</td>
+<td align="center">½</td>
+<td align="center">½</td>
+</tr>
+</tbody>
+</table>
+<p>For this assignment, assume the player starts with 100 pesos (or dollars) and the game ends when the player is down to 0, or when the dealer loses 900. Also, it is a good idea to add input validation and prevent the user from betting an amount bigger than the one the player actually has.</p>
+<h3 id="what-is-your-program-expected-to-do">What is your program expected to do?</h3>
+<p>Your program is expected to</p>
+<ol style="list-style-type: decimal">
+<li><em>play 'siete y medio' against you</em>, and</li>
+<li><em>keep a log of the rounds you played against the dealer</em>.</li>
+</ol>
+<p>When you run your program, important information about every round should be recorded in the file <code>gamelog.txt</code>. Some sample runs of my program can be found in the links below.</p>
+<ul>
+<li><a href="sample_run_1.txt">Sample run #1</a> and its <a href="gamelog1.txt">companion log file</a>.</li>
+<li><a href="sample_run_2.txt">Sample run #2</a> and its <a href="gamelog2.txt">companion log file</a>.</li>
+</ul>
+<h3 id="what-are-you-expected-to-do">What are you expected to do?</h3>
+<p>You are expected to use three classes: <code>Player</code>, <code>Card</code>, and <code>Hand</code>. You should put the 3 class declarations in the header file <code>cards.h</code> and all member function definitions in <code>cards.cpp</code>. You should write your main routine which plays the seven-and-a-half game in the source file <code>siete-y-medio.cpp</code>. The following templates should help you with the set up of your project.</p>
+<ul>
+<li><a href="cards.h" class="uri">cards.h</a>: a complete interface for the <code>Card</code> class plus templates for the <code>Hand</code> and <code>Player</code> interfaces.</li>
+<li><a href="cards.cpp" class="uri">cards.cpp</a>: an almost complete implementation of the <code>Card</code> class.</li>
+<li><a href="siete-y-medio.cpp" class="uri">siete-y-medio.cpp</a>: some suggested libraries plus a stub for the main routine.</li>
+</ul>
+<p>The <code>Card</code> class is provided to you but is incomplete, it is missing the implementation of a couple of functions. You are to provide the interface as well as the implementation of the member functions in the <code>Player</code> and <code>Hand</code> classes. You can use as many member functions as you deem necessary and you are free to decide how to organize the fields of these two classes. The <code>Player</code> class should be pretty straightforward, you just need to keep track of the amount of money a player has. You should be able to initialize, access and update said amount.</p>
+<h2 id="submission">Submission</h2>
+<p>Sign up for either a <a href="https://github.com/">github</a>, <a href="https://about.gitlab.com/">gitlab</a>, or <a href="https://bitbucket.org/">bitbucket</a> account and host your source code in a public repository. Then upload to CCLE a simple text file (e.g., <code>my_repo.txt</code>) containing the URL of this repository. The file will be automatically <strong>collected at the date and time listed in the CCLE assignment description</strong> (&quot;Grading summary&quot; table located at the bottom of the page).</p>
+<h3 id="grading-rubric">Grading rubric</h3>
+<p>Points will be assigned based on the following categories:</p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="82%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"><strong>Category</strong></th>
+<th align="left"><strong>Description</strong></th>
+<th align="center"><strong>Points</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>readme.md</code></td>
+<td align="left">Description of the project including documentation and/or test cases. See <a href="https://github.com/mr-mig/every-programmer-should-know">this document</a> for an example of a <code>readme.md</code> file.</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="left">Commits</td>
+<td align="left">You should work in increments and document your work. Try to be descriptive but concise when writing commit messages. For this project you should have at least 20 commit messages.</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="left">Branching</td>
+<td align="left">You are free to create as many branches as you see fit, but at the very minimum there should be an <code>experimental</code> branch where you test features before merging them into your <code>master</code> branch.</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="left">Merging</td>
+<td align="left">At some point in your development history you should merge two branches (<em>e.g.</em> <code>master</code> and <code>experimental</code>). Make sure <strong>at least one of these merges is a non-fast-forward one</strong>.</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="left">Other</td>
+<td align="left">This is left open for you, topics you might want to research are: <em>conflict resolutions</em>, <em>three-way merging</em>, creating <code>gitignore</code> files, etc.</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="left">Binary vs text</td>
+<td align="left">Version control software excels in keeping track on contents stored in text files. If your repository contains binary files (<em>e.g.</em> <code>.exe</code>, <code>.dll</code>, <code>.bin</code>, etc) there should be a very compelling reason for you to keep track of them. If this is the case you should document this reason in the <code>readme.md</code> file; otherwise you should <code>git rm</code> these files as soon as you become aware of their existence.</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

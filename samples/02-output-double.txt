@@ -1,0 +1,84 @@
+Statement:	vector<double> v1;
+xxxxxxxxxx Default constructor called
+
+Action(s):	v1 is populated with 7 double values
+
+Statement:	vector<double> v2(v1);
+xxxxxxxxxx Copy constructor called
+
+Statement:	vector<int> v3 = v1;
+xxxxxxxxxx Copy constructor called
+
+Action(s):	3rd entry of v1 is modified (314.16)
+		one more double value is pushed back (628.32)
+		v1 is displayed
+	v1 = {3.1416, 6.2832, 314.16, 12.5664, 15.708, 18.8496, 21.9912, 628.32}
+
+Action(s):	v2 is displayed
+	v2 = {3.1416, 6.2832, 9.4248, 12.5664, 15.708, 18.8496, 21.9912}
+
+Statement:	v3 = v2 = v1;
+xxxxxxxxxx Assignment operator called
+xxxxxxxxxx Assignment operator called
+
+Statement:	v1 = ( 2.0 * v2 ) * 3.0;
+xxxxxxxxxx Copy constructor called
+xxxxxxxxxx Copy constructor called
+xxxxxxxxxx Assignment operator called
+xxxxxxxxxx Destructor called
+xxxxxxxxxx Destructor called
+
+Action(s):	v1, v2, and v3 are displayed
+	v1 = {18.8496, 37.6992, 1884.96, 75.3984, 94.248, 113.098, 131.947, 3769.92}
+	v2 = {3.1416, 6.2832, 314.16, 12.5664, 15.708, 18.8496, 21.9912, 628.32}
+	v3 = {3.1416, 6.2832, 314.16, 12.5664, 15.708, 18.8496, 21.9912, 628.32}
+
+Statement:	v2 = v3 + v3;
+xxxxxxxxxx Copy constructor called
+xxxxxxxxxx Assignment operator called
+xxxxxxxxxx Destructor called
+
+Statement:	v3 += v2;
+
+Action(s):	v1, v2, and v3 are displayed
+	v1 = {18.8496, 37.6992, 1884.96, 75.3984, 94.248, 113.098, 131.947, 3769.92}
+	v2 = {6.2832, 12.5664, 628.32, 25.1328, 31.416, 37.6992, 43.9824, 1256.64}
+	v3 = {9.4248, 18.8496, 942.48, 37.6992, 47.124, 56.5488, 65.9736, 1884.96}
+
+Action(s):	Entries 2--7 in v1, v2, and v3 replaced by 0
+
+Action(s):	v1, v2, and v3 are displayed
+	v1 = {18.8496, 37.6992, 0, 0, 0, 0, 0, 0}
+	v2 = {6.2832, 12.5664, 0, 0, 0, 0, 0, 0}
+	v3 = {9.4248, 18.8496, 0, 0, 0, 0, 0, 0}
+
+Action(s):	The dot product of v2 and v3 is displayed
+	v2 * v3 = 296.09
+
+Action(s):	The norms of v1, v2, and v3 are displayed
+	|| v1 || = 42.149
+	|| v2 || = 14.0497
+	|| v3 || = 21.0745
+
+Action(s):	Boolean comparisons involving v1, v2, and v3
+	v1 <  v2 is false because || v1 || >  || v2 ||
+	v2 <= v1 is true  because || v2 || <= || v1 ||
+	v1 >  v3 is true  because || v1 || >  || v3 ||
+	v3 >= v1 is false because || v3 || <  || v1 ||
+	v2 == v3 is false
+	v2 != v3 is true
+
+xxxxxxxxxx Copy constructor called
+	v1 == 3.0 * v2 is true
+xxxxxxxxxx Destructor called
+
+xxxxxxxxxx Copy constructor called
+xxxxxxxxxx Copy constructor called
+	2.0 * v3 == v2 * 3.0 is true
+xxxxxxxxxx Destructor called
+xxxxxxxxxx Destructor called
+
+Statement:	return 0;
+xxxxxxxxxx Destructor called
+xxxxxxxxxx Destructor called
+xxxxxxxxxx Destructor called

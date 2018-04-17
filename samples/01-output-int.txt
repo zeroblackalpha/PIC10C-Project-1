@@ -1,0 +1,84 @@
+Statement:	vector<int> v1;
+xxxxxxxxxx Default constructor called
+
+Action(s):	v1 is populated with 5 int values
+
+Statement:	vector<int> v2(v1);
+xxxxxxxxxx Copy constructor called
+
+Statement:	vector<int> v3 = v1;
+xxxxxxxxxx Copy constructor called
+
+Action(s):	3rd entry of v1 is modified (10)
+		one more int value is pushed back (20)
+		v1 is displayed
+	v1 = {1, 2, 10, 4, 5, 20}
+
+Action(s):	v2 is displayed
+	v2 = {1, 2, 3, 4, 5}
+
+Statement:	v3 = v2 = v1;
+xxxxxxxxxx Assignment operator called
+xxxxxxxxxx Assignment operator called
+
+Statement:	v1 = ( 2 * v2 ) * 3;
+xxxxxxxxxx Copy constructor called
+xxxxxxxxxx Copy constructor called
+xxxxxxxxxx Assignment operator called
+xxxxxxxxxx Destructor called
+xxxxxxxxxx Destructor called
+
+Action(s):	v1, v2, and v3 are displayed
+	v1 = {6, 12, 60, 24, 30, 120}
+	v2 = {1, 2, 10, 4, 5, 20}
+	v3 = {1, 2, 10, 4, 5, 20}
+
+Statement:	v2 = v3 + v3;
+xxxxxxxxxx Copy constructor called
+xxxxxxxxxx Assignment operator called
+xxxxxxxxxx Destructor called
+
+Statement:	v3 += v2;
+
+Action(s):	v1, v2, and v3 are displayed
+	v1 = {6, 12, 60, 24, 30, 120}
+	v2 = {2, 4, 20, 8, 10, 40}
+	v3 = {3, 6, 30, 12, 15, 60}
+
+Action(s):	Entries 2--5 in v1, v2, and v3 replaced by 0
+
+Action(s):	v1, v2, and v3 are displayed
+	v1 = {6, 12, 0, 0, 0, 0}
+	v2 = {2, 4, 0, 0, 0, 0}
+	v3 = {3, 6, 0, 0, 0, 0}
+
+Action(s):	The dot product of v2 and v3 is displayed
+	v2 * v3 = 30
+
+Action(s):	The norms of v1, v2, and v3 are displayed
+	|| v1 || = 13.4164
+	|| v2 || = 4.47214
+	|| v3 || = 6.7082
+
+Action(s):	Boolean comparisons involving v1, v2, and v3
+	v1 <  v2 is false because || v1 || >  || v2 ||
+	v2 <= v1 is true  because || v2 || <= || v1 ||
+	v1 >  v3 is true  because || v1 || >  || v3 ||
+	v3 >= v1 is false because || v3 || <  || v1 ||
+	v2 == v3 is false
+	v2 != v3 is true
+
+xxxxxxxxxx Copy constructor called
+	v1 == 3 * v2 is true
+xxxxxxxxxx Destructor called
+
+xxxxxxxxxx Copy constructor called
+xxxxxxxxxx Copy constructor called
+	2 * v3 == 3 * v2 is true
+xxxxxxxxxx Destructor called
+xxxxxxxxxx Destructor called
+
+Statement:	return 0;
+xxxxxxxxxx Destructor called
+xxxxxxxxxx Destructor called
+xxxxxxxxxx Destructor called

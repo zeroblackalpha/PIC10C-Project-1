@@ -1,7 +1,7 @@
 # PIC10C-Project-1
 This is a project for my PIC10C course at UCLA.
-The goal is to create my own implementation of a templatized vector class with all the same features as the vector class in the standard template library vector class.
-The grades for this assignment do not come from the functioning of the project, but a demonstration of a familiarity with various git commands and features as to be seen in my commit history.
+The goal is to create my own implementation of a templatized vector class with all the same features as the vector class in the standard template library vector class. The specifics of the project are available in the pic10b_vector.pdf in this repository.
+The grades for this assignment do not come from the functioning of the project, but a demonstration of a familiarity with various git commands and features as to be seen in my commit history. The actual assignment is available in the assignment.html file in this repository.
 
 ## Special git features tried:
-None so far.
+I added a .gitignore file to prevent git from picking up on my executable file and the visual studio code json files.
