@@ -83,8 +83,17 @@ namespace Pic10b{
         T& operator[]( size_t index ){
             return the_data[index];
         }
+
         T operator[]( size_t index ) const {
             return the_data[index];
+        }
+
+        bool operator<(const vector<T>& a) const {
+            return a.squared_norm() > squared_norm();
+        }
+
+        bool operator==(const vector<T>& a) const {
+            return  a.squared_norm() == squared_norm();
         }
 
         void dump_data_to( std::ostream& out ) const {
@@ -108,6 +117,14 @@ namespace Pic10b{
         void pop_back(){
             if ( the_size > 0 )
                 --the_size;
+        }
+
+        T squared_norm() const{
+            T norm = 0;
+            for (int i = 0; i < the_size; ++i){
+                norm += (this->operator[](i))*(this->operator[](i));
+            }
+            return norm;
         }
 
       private:
@@ -147,3 +164,33 @@ void print_vector( const Pic10b::vector<T>& v ){
     else
         std::cout << "Vector (contents): " << v << '\n' ;
 } 
+
+template <class T>
+T operator+(T lhs, const T& rhs) {
+	return lhs += rhs;
+}
+
+template <class T>
+T operator*(T lhs, const T& rhs) {
+	return lhs *= rhs;
+}
+
+template <class T>
+bool operator>(const T& a, const T& b) {
+	return (!(a < b) && !(a == b));
+}
+
+template <class T>
+bool operator<=(const T& a, const T& b) {
+	return (a < b || a == b);
+}
+
+template <class T>
+bool operator>=(const T& a, const T& b) {
+	return !(a < b);
+}
+
+template <class T>
+bool operator!=(const T& a, const T& b) {
+	return !(a == b);
+}
