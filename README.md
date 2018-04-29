@@ -8,11 +8,11 @@ The grades for this assignment do not come from the functioning of the project, 
 ## Features currently implemented
 1. Templatization of both member and non-member functions
 2. Implemented comparison operators
+3. Vector aritmetic
 
 ## Features to be implemented
-1. Vector arithmetic
-2. Template specialization for string types
-3. Verifying robustness of the code
+1. Template specialization for string types
+2. Verifying robustness of the code
 
 ## Special git features tried:
 I added a .gitignore file to prevent git from picking up on my executable file and the visual studio code json files.
@@ -21,4 +21,4 @@ I added a .gitignore file to prevent git from picking up on my executable file a
 Unit testing is done with the three driver .cpp files for int, double, and string types
 
 ## Compatibility
-The code was written in Visual Studio Code and compiled using g++ MinGW on Windows 10. Although not using any newly introduced features, the g++ compiler was using the newest C++17 specifications.
+The code was written in Visual Studio Code and compiled using g++ 6.3.0 MinGW on Windows 10. It is using only the -g flag.

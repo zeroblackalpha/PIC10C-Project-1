@@ -102,5 +102,6 @@ int main(){
     cout << "\t2.0 * v3 == v2 * 3.0 is " << ( 2.0 * v3 == v2 * 3.0 ) << '\n';
 
     cout << "\nStatement:\treturn 0;\n";
+    system("pause");
     return 0;
 }
