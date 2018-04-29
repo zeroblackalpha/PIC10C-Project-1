@@ -18,4 +18,7 @@ The grades for this assignment do not come from the functioning of the project, 
 I added a .gitignore file to prevent git from picking up on my executable file and the visual studio code json files.
 
 ## Unit testing
-Unit testing is done with the three drive .cpp files for int, double, and string types
+Unit testing is done with the three driver .cpp files for int, double, and string types
+
+## Compatibility
+The code was written in Visual Studio Code and compiled using g++ MinGW on Windows 10. Although not using any newly introduced features, the g++ compiler was using the newest C++17 specifications.
