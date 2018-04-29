@@ -83,6 +83,7 @@ namespace Pic10b{
         T& operator[]( size_t index ){
             return the_data[index];
         }
+        
         T operator[]( size_t index ) const {
             return the_data[index];
         }
