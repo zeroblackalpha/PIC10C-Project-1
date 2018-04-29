@@ -50,24 +50,24 @@ int main(){
     v3 = v2 = v1; 
 
     /*cout << "\nStatement:\tv1 = ( 2 * v2 ) * 3;\n";
-    v1 = ( 2 * v2 ) * 3;
+    v1 = ( 2 * v2 ) * 3;*/
 
     cout << "\nAction(s):\tv1, v2, and v3 are displayed\n";
     cout << "\tv1 = " << v1 << '\n';
     cout << "\tv2 = " << v2 << '\n';
     cout << "\tv3 = " << v3 << '\n';
 
-    cout << "\nStatement:\tv2 = v3 + v3;\n";
+   /* cout << "\nStatement:\tv2 = v3 + v3;\n";
     v2 = v3 + v3;
 
     cout << "\nStatement:\tv3 += v2;\n";
-    v3 += v2;
+    v3 += v2;*/
 
     cout << "\nAction(s):\tv1, v2, and v3 are displayed\n";
     cout << "\tv1 = " << v1 << '\n';
     cout << "\tv2 = " << v2 << '\n';
     cout << "\tv3 = " << v3 << '\n';
-*/
+
     cout << "\nAction(s):\tEntries 2--"<< SIZE 
          <<" in v1, v2, and v3 replaced by 0\n";
     for ( int i = 2 ; i < v1.size() ; ++i )
@@ -98,7 +98,7 @@ int main(){
 
     /*cout << "\tv1 == 3 * v2 is " << ( v1 == 3 * v2 ) << '\n';
     cout << '\n';
-    cout << "\t2 * v3 == 3 * v2 is " << ( 2 * v3 == 3 * v2 ) << '\n';  
+    cout << "\t2 * v3 == 3 * v2 is " << ( 2 * v3 == 3 * v2 ) << '\n';*/  
 
     cout << "\nStatement:\treturn 0;\n";
     system("pause");
