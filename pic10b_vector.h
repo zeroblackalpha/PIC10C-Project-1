@@ -96,6 +96,28 @@ namespace Pic10b{
             return  a.squared_norm() == squared_norm();
         }
 
+        T operator*(const vector<T>& a) const {
+            T product = 0;
+            for (int i = 0; i < the_size; ++i){
+                product += this->operator[](i) * a[i];
+            }
+            return product;
+        }
+
+        vector<T>& operator*=(const int a){
+            for (int i = 0; i < the_size; ++i){
+                this->operator[](i) = this->operator[](i) * a;
+            }
+            return *this;
+        }
+
+        vector<T>& operator+=(const vector<T>& a){
+            for (int i = 0; i < the_size; ++i){
+                this->operator[](i) = this->operator[](i) + a[i];
+            }
+            return *this;
+        }
+
         void dump_data_to( std::ostream& out ) const {
             out << "Vector (dump): ";
             for ( size_t i = 0 ; i < the_capacity ; ++i )
@@ -171,8 +193,15 @@ T operator+(T lhs, const T& rhs) {
 }
 
 template <class T>
-T operator*(T lhs, const T& rhs) {
-	return lhs *= rhs;
+T operator*(T lhs, const int rhs) {
+    T temp = lhs;
+	return temp *= rhs;
+}
+
+template <class T>
+T operator*(const int lhs, T rhs) {
+    T temp = rhs;
+	return temp *= lhs;
 }
 
 template <class T>
