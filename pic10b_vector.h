@@ -147,3 +147,33 @@ void print_vector( const Pic10b::vector<T>& v ){
     else
         std::cout << "Vector (contents): " << v << '\n' ;
 } 
+
+template <class T>
+Integer operator+(Integer lhs, const Integer& rhs) {
+	return lhs += rhs;
+}
+
+template <class T>
+Integer operator*(Integer lhs, const Integer& rhs) {
+	return lhs *= rhs;
+}
+
+template <class T>
+bool operator>(const Integer& a, const Integer& b) {
+	return (!(a < b) && !(a == b));
+}
+
+template <class T>
+bool operator<=(const Integer& a, const Integer& b) {
+	return (a < b || a == b);
+}
+
+template <class T>
+bool operator>=(const Integer& a, const Integer& b) {
+	return !(a < b);
+}
+
+template <class T>
+bool operator!=(const Integer& a, const Integer& b) {
+	return !(a == b);
+}
