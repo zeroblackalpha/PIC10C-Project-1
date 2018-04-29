@@ -86,7 +86,7 @@ int main(){
     cout << "\t|| v2 || = " << sqrt(v2*v2) << '\n';
     cout << "\t|| v3 || = " << sqrt(v3*v3) << '\n';*/
 
-    /*cout << "\nAction(s):\tBoolean comparisons involving v1, v2, and v3\n";
+    ut << "\nAction(s):\tBoolean comparisons involving v1, v2, and v3\n";
     cout << std::boolalpha
          << "\tv1 <  v2 is " << ( v1 <  v2 ) << " because || v1 || >  || v2 ||\n"
          << "\tv2 <= v1 is " << ( v2 <= v1 ) << "  because || v2 || <= || v1 ||\n"
@@ -96,9 +96,9 @@ int main(){
          << "\tv2 != v3 is " << ( v2 != v3 ) << '\n';
     cout << '\n';
 
-    cout << "\tv1 == 3 * v2 is " << ( v1 == 3 * v2 ) << '\n';
+      /*cout << "\tv1 == 3 * v2 is " << ( v1 == 3 * v2 ) << '\n';
     cout << '\n';
-    cout << "\t2 * v3 == 3 * v2 is " << ( 2 * v3 == 3 * v2 ) << '\n';*/
+    cout << "\t2 * v3 == 3 * v2 is " << ( 2 * v3 == 3 * v2 ) << '\n';  
 
     cout << "\nStatement:\treturn 0;\n";
     system("pause");
