@@ -1,4 +1,5 @@
 #include <iostream>   // std::ostream, std::cout
+#include <string>
 
 namespace Pic10b{
 
@@ -111,6 +112,13 @@ namespace Pic10b{
             return *this;
         }
 
+        vector<T>& operator*=(const std::string a){
+            for (int i = 0; i < the_size; ++i){
+                this->operator[](i) = a + this->operator[](i);
+            }
+            return *this;
+        }
+
         vector<T>& operator+=(const vector<T>& a){
             for (int i = 0; i < the_size; ++i){
                 this->operator[](i) = this->operator[](i) + a[i];
@@ -179,6 +187,14 @@ std::ostream& operator<<( std::ostream& out, const Pic10b::vector<T>& v ){
     return out;
 }
 
+std::ostream& operator<<( std::ostream& out, const Pic10b::vector<std::string>& v ){
+    out << "[";
+    for ( size_t i = 0 ; i < v.size() ; ++i )
+        out << v[i] << ", ";
+    out << "]";
+    return out;
+}
+
 template <class T>
 void print_vector( const Pic10b::vector<T>& v ){
     if ( v.empty() )
@@ -205,6 +221,18 @@ T operator*(const int lhs, T rhs) {
 }
 
 template <class T>
+T operator*(T lhs, const std::string rhs) {
+    T temp = lhs;
+	return temp *= rhs;
+}
+
+template <class T>
+T operator*(const std::string lhs, T rhs) {
+    T temp = rhs;
+	return temp *= lhs;
+}
+
+template <class T>
 bool operator>(const T& a, const T& b) {
 	return (!(a < b) && !(a == b));
 }
@@ -221,5 +249,20 @@ bool operator>=(const T& a, const T& b) {
 
 template <class T>
 bool operator!=(const T& a, const T& b) {
+	return !(a == b);
+}
+
+bool operator==(const Pic10b::vector<std::string>& lhs, const Pic10b::vector<std::string>& rhs){
+            if (lhs.capacity() != rhs.capacity())
+                return false;
+            for (int i = 0; i < lhs.capacity(); ++i){
+                if (lhs[i] != rhs[i]){
+                    return false;
+                }
+            }
+            return  true;
+        }
+
+bool operator!=(const Pic10b::vector<std::string>& a, const Pic10b::vector<std::string>& b) {
 	return !(a == b);
 }
