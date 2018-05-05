@@ -93,11 +93,11 @@ namespace Pic10b{
             return a.squared_norm() > squared_norm();
         }
 
-        bool operator==(const vector<T>& a) const {
+        /*bool operator==(const vector<T>& a) const {
             return  a.squared_norm() == squared_norm();
-        }
+        }*/
 
-        bool operator==(const Pic10b::vector<std::string>& rhs){
+        bool operator==(const vector<std::string>& rhs) const {
             if (this->capacity() != rhs.capacity())
                 return false;
             for (int i = 0; i < this->capacity(); ++i){
@@ -105,7 +105,7 @@ namespace Pic10b{
                     return false;
                 }
             }
-            return  true;
+            return true;
         }
 
         T operator*(const vector<T>& a) const {
@@ -201,8 +201,8 @@ std::ostream& operator<<( std::ostream& out, const Pic10b::vector<T>& v ){
 std::ostream& operator<<( std::ostream& out, const Pic10b::vector<std::string>& v ){
     out << "[";
     for ( size_t i = 0 ; i < v.size() ; ++i )
-        out << v[i] << ", ";
-    out << "]";
+        out << " " << v[i] << ",";
+    out << "\b ]";
     return out;
 }
 

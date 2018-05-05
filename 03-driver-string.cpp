@@ -68,5 +68,6 @@ int main(){
          << "\tv2 != v1 is " << ( v2 != v1 ) << '\n';
 
     cout << "\nStatement:\treturn 0;\n";
+    system("pause");
     return 0;
 }
