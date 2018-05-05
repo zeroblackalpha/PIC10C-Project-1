@@ -97,6 +97,17 @@ namespace Pic10b{
             return  a.squared_norm() == squared_norm();
         }
 
+        bool operator==(const Pic10b::vector<std::string>& rhs){
+            if (this->capacity() != rhs.capacity())
+                return false;
+            for (int i = 0; i < this->capacity(); ++i){
+                if (this->operator[](i) != rhs[i]){
+                    return false;
+                }
+            }
+            return  true;
+        }
+
         T operator*(const vector<T>& a) const {
             T product = 0;
             for (int i = 0; i < the_size; ++i){
@@ -221,15 +232,19 @@ T operator*(const int lhs, T rhs) {
 }
 
 template <class T>
-T operator*(T lhs, const std::string rhs) {
-    T temp = lhs;
+Pic10b::vector<T> operator*(Pic10b::vector<T> lhs, const std::string rhs) {
+    Pic10b::vector<T> temp = lhs;
 	return temp *= rhs;
 }
 
 template <class T>
-T operator*(const std::string lhs, T rhs) {
-    T temp = rhs;
+Pic10b::vector<T> operator*(const std::string lhs, Pic10b::vector<T> rhs) {
+    Pic10b::vector<T> temp = rhs;
 	return temp *= lhs;
+}
+
+std::string operator*(const std::string lhs, const std::string rhs){
+    return "";
 }
 
 template <class T>
@@ -251,17 +266,6 @@ template <class T>
 bool operator!=(const T& a, const T& b) {
 	return !(a == b);
 }
-
-bool operator==(const Pic10b::vector<std::string>& lhs, const Pic10b::vector<std::string>& rhs){
-            if (lhs.capacity() != rhs.capacity())
-                return false;
-            for (int i = 0; i < lhs.capacity(); ++i){
-                if (lhs[i] != rhs[i]){
-                    return false;
-                }
-            }
-            return  true;
-        }
 
 bool operator!=(const Pic10b::vector<std::string>& a, const Pic10b::vector<std::string>& b) {
 	return !(a == b);
