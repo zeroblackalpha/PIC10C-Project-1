@@ -17,6 +17,9 @@ The grades for this assignment do not come from the functioning of the project, 
 ## Special git features tried:
 I added a .gitignore file to prevent git from picking up on my executable file and the visual studio code json files.
 
+## Note:
+Additional commits exist on the Partial-Template-Specialization branch
+
 ## Unit testing
 Unit testing is done with the three driver .cpp files for int, double, and string types
 
